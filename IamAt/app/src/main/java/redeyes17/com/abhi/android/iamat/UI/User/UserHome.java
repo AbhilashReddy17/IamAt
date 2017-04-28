@@ -13,10 +13,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import redeyes17.com.abhi.android.iamat.FireBase_references.FirebaseAuthentication;
-import redeyes17.com.abhi.android.iamat.FireBase_references.Firebase_database;
 import redeyes17.com.abhi.android.iamat.MainActivity;
 import redeyes17.com.abhi.android.iamat.R;
 import redeyes17.com.abhi.android.iamat.UI.user_profile.UserProfileFragment;
@@ -72,8 +71,8 @@ public class   UserHome extends AppCompatActivity {
     }
 
     private void configureViews() {
-        mauth= FirebaseAuthentication.getInstance();
-        databaseReference = Firebase_database.getInstance().getReference().child("user_profiles");
+        mauth= FirebaseAuth.getInstance();
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("user_profiles");
     }
 
     @Override

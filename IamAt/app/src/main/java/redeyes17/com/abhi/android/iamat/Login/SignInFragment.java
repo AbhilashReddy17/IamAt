@@ -21,7 +21,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import redeyes17.com.abhi.android.iamat.FireBase_references.FirebaseAuthentication;
 import redeyes17.com.abhi.android.iamat.R;
 import redeyes17.com.abhi.android.iamat.UI.User.UserHome;
 
@@ -57,7 +56,6 @@ public class SignInFragment extends Fragment {
 
                 if(!TextUtils.isEmpty(emailValue) && !TextUtils.isEmpty(passswordValue)){
 
-                   mauth= FirebaseAuthentication.getInstance();
                     mauth.signInWithEmailAndPassword(emailValue,passswordValue).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -106,5 +104,6 @@ public class SignInFragment extends Fragment {
         login = (TextView) view.findViewById(R.id.login_button);
         manager = getActivity().getSupportFragmentManager();
         transaction = manager.beginTransaction();
+        mauth = FirebaseAuth.getInstance();
     }
 }

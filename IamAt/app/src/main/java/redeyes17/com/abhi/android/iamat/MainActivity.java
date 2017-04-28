@@ -12,7 +12,6 @@ import android.support.v7.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import redeyes17.com.abhi.android.iamat.FireBase_references.FirebaseAuthentication;
 import redeyes17.com.abhi.android.iamat.Login.SignInFragment;
 import redeyes17.com.abhi.android.iamat.UI.User.UserHome;
 
@@ -50,7 +49,7 @@ FragmentTransaction transaction;
             }
 
     private void configureViews() {
-        mauth =FirebaseAuthentication.getInstance();
+        mauth = FirebaseAuth.getInstance();
         manager = getSupportFragmentManager();
         transaction = manager.beginTransaction();
         dialog = new ProgressDialog(this);

@@ -2,6 +2,7 @@ package redeyes17.com.abhi.android.iamat.Login;
 
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -21,9 +22,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
-import redeyes17.com.abhi.android.iamat.FireBase_references.FirebaseAuthentication;
-import redeyes17.com.abhi.android.iamat.FireBase_references.Firebase_database;
 import redeyes17.com.abhi.android.iamat.R;
+import redeyes17.com.abhi.android.iamat.UI.User.UserHome;
 import redeyes17.com.abhi.android.iamat.UI.user_profile.UserProfileFragment;
 
 /**
@@ -72,8 +72,8 @@ public class SignUpFragment extends Fragment{
     }
 
     private void createuser(String email, String password) {
-        FirebaseDatabase database = Firebase_database.getInstance();
-        FirebaseAuth mauth = FirebaseAuthentication.getInstance();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        FirebaseAuth mauth = FirebaseAuth.getInstance();
         mauth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
