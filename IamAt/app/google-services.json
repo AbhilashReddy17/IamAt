@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "554750350251",
+    "firebase_url": "https://iam-at.firebaseio.com",
+    "project_id": "iam-at",
+    "storage_bucket": "iam-at.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:554750350251:android:e0a78b42a0a23758",
+        "android_client_info": {
+          "package_name": "redeyes17.com.abhi.android.iamat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "554750350251-tvgqtsacagusr2uje5ho11mijeclbqaa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "redeyes17.com.abhi.android.iamat",
+            "certificate_hash": "9793cf870d5df3d47dafc1431adacaca003e38b1"
+          }
+        },
+        {
+          "client_id": "554750350251-o58rncp9053u27951559dmgki2vr775q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBciw6yYcFJg8fNUZ3vkkEmYr0Gk1A88xE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "554750350251-o58rncp9053u27951559dmgki2vr775q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:gravity="center"
+    android:id="@+id/userprofile_fragment">
+
+    <ImageView
+        android:id="@+id/userprofile_image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:contentDescription="@string/userprofile_contentdescription"
+        android:src="@drawable/profile_picture_icon"
+        />
+    <EditText
+        android:id="@+id/userrprofie_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/username"/>
+    <EditText
+        android:id="@+id/userprofile_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/status"/>
+    <Button
+        android:id="@+id/userprofile_saveprofile_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/saveprofile"
+        android:gravity="center_horizontal"
+        android:padding="16dp"
+        android:layout_marginBottom="32dp"
+        android:background="@color/colorPrimary"/>
+
+
+</LinearLayout>
