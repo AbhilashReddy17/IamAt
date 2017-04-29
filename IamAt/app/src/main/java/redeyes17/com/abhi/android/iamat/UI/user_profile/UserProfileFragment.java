@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -38,12 +39,12 @@ import static android.app.Activity.RESULT_OK;
 
 public class UserProfileFragment extends Fragment{
     public static final String USERPROFILE ="userprofile";
-    private static final int RC_GALLERY = 100;
-    private static final int REQUEST_IMAGE_CAPTURE = 101;
+    private static final int RC_GALLERY = 20;
+    private static final int REQUEST_IMAGE_CAPTURE = 21;
     ImageView img;
     TextView username,status;
     Button saveprofilebutton;
-    Uri imageHoldUri;
+    Uri imageHoldUri=null;
 
     FirebaseAuth mauth;
     DatabaseReference databasereference;
@@ -86,7 +87,10 @@ AlertDialog.Builder builder;
             @Override
             public void onClick(View v) {
                 dialog.show();
-              //  createProfile();
+               createProfile();
+                Intent intent = new Intent(getActivity(),UserHome.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
 
             }
         });
@@ -116,14 +120,15 @@ AlertDialog.Builder builder;
                         databasereference.child(uid).child("profilepicture").setValue(uri);
                         Intent intent = new Intent(getActivity(), UserHome.class);
                         startActivity(intent);
-                        dialog.dismiss();
                     }
                 });
         }
+        dialog.dismiss();
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == RC_GALLERY && resultCode== RESULT_OK){
 getImage(data);
@@ -132,7 +137,9 @@ getImage(data);
 getImage(data);
         }
 
+        Toast.makeText(getActivity(), requestCode + "", Toast.LENGTH_SHORT).show();
         if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+            Toast.makeText(getActivity(), "enered onActivityresult", Toast.LENGTH_SHORT).show();
             Log.d("entered","setting image");
             CropImage.ActivityResult result = CropImage.getActivityResult(data);
             if (resultCode == RESULT_OK) {

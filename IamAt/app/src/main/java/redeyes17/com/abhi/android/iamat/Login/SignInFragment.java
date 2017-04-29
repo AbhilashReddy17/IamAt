@@ -63,7 +63,7 @@ public class SignInFragment extends Fragment {
                             if(task.isSuccessful()){
                                 FirebaseUser user = mauth.getCurrentUser();
                                 Intent intent = new Intent(getActivity(), UserHome.class);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_TASK_ON_HOME);
                                 startActivity(intent);
                             }else{
                                 Toast.makeText(getActivity(), "login not successfull", Toast.LENGTH_SHORT).show();
