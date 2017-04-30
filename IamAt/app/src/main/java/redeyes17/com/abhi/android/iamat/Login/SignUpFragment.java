@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,7 +21,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
 import redeyes17.com.abhi.android.iamat.R;
-import redeyes17.com.abhi.android.iamat.UI.User.UserHome;
 import redeyes17.com.abhi.android.iamat.UI.user_profile.UserProfileFragment;
 
 /**
@@ -78,12 +75,8 @@ public class SignUpFragment extends Fragment{
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
            if(task.isSuccessful()){
-               Fragment fragment = new UserProfileFragment();
-               FragmentManager manager = getActivity().getSupportFragmentManager();
-               FragmentTransaction transaction = manager.beginTransaction();
-               transaction.detach(manager.findFragmentByTag(SIGNUP_FRAGMENT));
-               transaction.add(R.id.login_fragment_container,fragment, UserProfileFragment.USERPROFILE);
-               transaction.commit();
+               Intent intent = new Intent(getActivity(),UserProfileFragment.class);
+               startActivity(intent);
                 dialog.dismiss();
                Toast.makeText(getActivity(), "your account created", Toast.LENGTH_SHORT).show();
            }

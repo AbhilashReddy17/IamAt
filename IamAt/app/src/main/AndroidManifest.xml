@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
         android:name=".Login.FireApp"
@@ -22,7 +24,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".UI.User.UserHome" />
+        <activity android:name=".UI.user_profile.UserHome" />
+        <activity android:name=".UI.user_profile.UserProfileFragment"/>
 
         <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat"/>

@@ -22,7 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import redeyes17.com.abhi.android.iamat.R;
-import redeyes17.com.abhi.android.iamat.UI.User.UserHome;
+import redeyes17.com.abhi.android.iamat.UI.user_profile.UserHome;
 
 /**
  * Created by Abhilash Reddy on 4/25/2017.
